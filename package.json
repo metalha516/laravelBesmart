@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node -e \"import fs from 'fs'; fs.copyFileSync('_site/index.html', '_site/404.html');\"",
     "test": "node --test tests/unit/suite.test.js"
   },
   "devDependencies": {
