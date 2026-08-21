@@ -5,12 +5,8 @@ export const useThemeStore = defineStore('theme', () => {
   const isDark = ref(false);
 
   function initTheme() {
-    const saved = localStorage.getItem('theme');
-    if (saved) {
-      isDark.value = saved === 'dark';
-    } else {
-      isDark.value = false;
-    }
+    isDark.value = false;
+    localStorage.removeItem('theme');
     updateDocument();
   }
 
