@@ -1,22 +1,34 @@
 <template>
-  <div class="max-w-md mx-auto my-12 p-8 glass-card rounded-3xl border border-gray-200 dark:border-gray-800 shadow-2xl transition-all duration-300">
+  <div class="max-w-md mx-auto my-12 p-8 glass-card rounded-3xl border border-slate-200 shadow-2xl transition-all duration-300">
     
     <!-- STEP 1: CREDENTIALS INPUT -->
     <template v-if="step === 'credentials'">
       <div class="text-center mb-6">
         <div class="w-12 h-12 rounded-2xl taobao-gradient-orange text-white font-black text-2xl flex items-center justify-center mx-auto mb-2 shadow-glow">B</div>
-        <h2 class="text-2xl font-black text-gray-900 dark:text-white">Log In to Besmart</h2>
-        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Access B2C Retail & B2B Wholesale Portals</p>
+        <h2 class="text-2xl font-black text-slate-950">Log In to Besmart</h2>
+        <p class="text-xs text-slate-700 font-semibold mt-1">Access B2C Retail & B2B Wholesale Portals</p>
       </div>
 
       <form @submit.prevent="initiateOtp" class="space-y-4">
         <div>
-          <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Email Address</label>
-          <input v-model="form.email" type="email" placeholder="name@example.com" required class="w-full px-4 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm dark:text-white focus:ring-2 focus:ring-brand-500 outline-none" />
+          <label class="block text-xs font-black text-slate-800 uppercase mb-1">Email Address</label>
+          <input
+            v-model="form.email"
+            type="email"
+            placeholder="name@example.com"
+            required
+            class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-slate-300 text-sm font-semibold text-slate-950 placeholder:text-slate-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all"
+          />
         </div>
         <div>
-          <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Password</label>
-          <input v-model="form.password" type="password" placeholder="••••••••" required class="w-full px-4 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm dark:text-white focus:ring-2 focus:ring-brand-500 outline-none" />
+          <label class="block text-xs font-black text-slate-800 uppercase mb-1">Password</label>
+          <input
+            v-model="form.password"
+            type="password"
+            placeholder="••••••••"
+            required
+            class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-slate-300 text-sm font-semibold text-slate-950 placeholder:text-slate-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all"
+          />
         </div>
 
         <!-- Main CTA Submit Button -->
@@ -33,38 +45,10 @@
         </button>
       </form>
 
-      <!-- Quick One-Click Demo CTA Buttons -->
-      <div class="mt-6 pt-5 border-t border-gray-200 dark:border-gray-800">
-        <p class="text-xs font-bold text-gray-400 uppercase text-center mb-3">Quick Demo Logins</p>
-        <div class="grid grid-cols-3 gap-2">
-          <button
-            type="button"
-            @click="quickLogin('customer@gmail.com', 'password')"
-            class="px-2 py-2 text-xs font-bold rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 transition-colors text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 cursor-pointer"
-          >
-            Customer
-          </button>
-          <button
-            type="button"
-            @click="quickLogin('b2b@techmart.com', 'password')"
-            class="px-2 py-2 text-xs font-bold rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-500 transition-colors text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 cursor-pointer"
-          >
-            B2B Merchant
-          </button>
-          <button
-            type="button"
-            @click="quickLogin('admin@besmart.com', 'password')"
-            class="px-2 py-2 text-xs font-bold rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-red-500 hover:text-white dark:hover:bg-red-500 transition-colors text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 cursor-pointer"
-          >
-            Admin
-          </button>
-        </div>
-      </div>
-
       <!-- Registration CTA -->
       <div class="mt-6 pt-4 text-center text-xs">
-        <p class="text-gray-500 mb-2">Don't have an account?</p>
-        <router-link to="/register" class="inline-block w-full py-3 px-4 rounded-xl border-2 border-brand-500 text-brand-500 dark:text-white font-bold hover:bg-brand-500 hover:text-white transition-all text-center">
+        <p class="text-slate-700 font-semibold mb-2">Don't have an account?</p>
+        <router-link to="/register" class="inline-block w-full py-3 px-4 rounded-xl border-2 border-brand-500 text-brand-600 font-black hover:bg-brand-500 hover:text-white transition-all text-center">
           Create New Account →
         </router-link>
       </div>
@@ -73,9 +57,9 @@
     <!-- STEP 2: OTP VERIFICATION -->
     <template v-else-if="step === 'otp'">
       <div class="text-center mb-6">
-        <h2 class="text-2xl font-black text-gray-900 dark:text-white">Verification Code</h2>
-        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5">
-          We sent a 6-digit code to <span class="font-semibold text-gray-700 dark:text-gray-300">{{ form.email }}</span>.
+        <h2 class="text-2xl font-black text-slate-950">Verification Code</h2>
+        <p class="text-xs text-slate-700 font-semibold mt-1.5">
+          We sent a 6-digit code to <span class="font-black text-slate-950">{{ form.email }}</span>.
         </p>
       </div>
 
@@ -92,20 +76,8 @@
             v-model="otpDigits[idx]"
             @input="handleOtpInput(idx, $event)"
             @keydown="handleOtpKeyDown(idx, $event)"
-            class="w-12 h-14 text-center text-xl font-black rounded-2xl bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/20 outline-none transition-all shadow-sm"
+            class="w-12 h-14 text-center text-xl font-black rounded-2xl bg-transparent border-2 border-slate-300 text-slate-950 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/20 outline-none transition-all shadow-sm"
           />
-        </div>
-
-        <!-- Quick Demo Helper Pill -->
-        <div class="flex items-center justify-between bg-orange-50 dark:bg-orange-950/40 p-3 rounded-2xl border border-orange-200 dark:border-orange-900/50">
-          <span class="text-xs text-orange-800 dark:text-orange-300 font-medium">Demo OTP Code: <strong class="font-bold">123456</strong></span>
-          <button
-            type="button"
-            @click="autoFillOtp"
-            class="text-xs bg-brand-500 text-white font-bold px-3 py-1.5 rounded-xl hover:bg-brand-600 active:scale-95 transition-all shadow-sm cursor-pointer"
-          >
-            Auto-Fill
-          </button>
         </div>
 
         <!-- Verify CTA Button -->
@@ -122,11 +94,11 @@
           <span>{{ loading ? 'Verifying Code...' : 'Verify Account' }}</span>
         </button>
 
-        <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 pt-2">
-          <button type="button" @click="step = 'credentials'" class="hover:text-brand-500 font-bold cursor-pointer">
+        <div class="flex items-center justify-between text-xs text-slate-700 font-bold pt-2">
+          <button type="button" @click="step = 'credentials'" class="hover:text-brand-600 font-black cursor-pointer">
             ← Change Email / Back
           </button>
-          <button type="button" @click="resendOtp" class="hover:text-brand-500 font-bold cursor-pointer text-brand-500">
+          <button type="button" @click="resendOtp" class="hover:text-brand-600 font-black cursor-pointer text-brand-600">
             Resend Code
           </button>
         </div>
@@ -154,7 +126,6 @@ const form = reactive({ email: '', password: '' });
 
 const otpDigits = ref(['', '', '', '', '', '']);
 const otpInputRefs = ref([]);
-const expectedOtp = ref('123456');
 
 function initiateOtp() {
   if (!form.email || !form.password) {
@@ -163,18 +134,12 @@ function initiateOtp() {
   }
   step.value = 'otp';
   otpDigits.value = ['', '', '', '', '', ''];
-  notify.show('Verification code sent! (Demo Code: 123456)', 'info');
+  notify.show('Verification code sent!', 'info');
   nextTick(() => {
     if (otpInputRefs.value[0]) {
       otpInputRefs.value[0].focus();
     }
   });
-}
-
-function quickLogin(email, password) {
-  form.email = email;
-  form.password = password;
-  initiateOtp();
 }
 
 function handleOtpInput(index, event) {
@@ -215,14 +180,9 @@ function handleOtpPaste(event) {
   }
 }
 
-function autoFillOtp() {
-  otpDigits.value = ['1', '2', '3', '4', '5', '6'];
-  notify.show('OTP Auto-filled with demo code 123456', 'success');
-}
-
 function resendOtp() {
   otpDigits.value = ['', '', '', '', '', ''];
-  notify.show('A new verification code (123456) has been sent to your device!', 'info');
+  notify.show('A new verification code has been sent to your device!', 'info');
   nextTick(() => {
     if (otpInputRefs.value[0]) {
       otpInputRefs.value[0].focus();

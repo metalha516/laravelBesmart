@@ -1,46 +1,46 @@
 <template>
-  <div class="max-w-md mx-auto my-12 p-8 glass-card rounded-3xl border border-gray-200 dark:border-gray-800 shadow-2xl">
+  <div class="max-w-md mx-auto my-12 p-8 glass-card rounded-3xl border border-slate-200 shadow-2xl">
     <div class="text-center mb-6">
-      <h2 class="text-2xl font-black text-gray-900 dark:text-white">Create Besmart Account</h2>
-      <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Select B2C Customer or B2B Wholesale Retailer</p>
+      <h2 class="text-2xl font-black text-slate-950">Create Besmart Account</h2>
+      <p class="text-xs text-slate-700 font-semibold mt-1">Select B2C Customer or B2B Wholesale Retailer</p>
     </div>
 
     <form @submit.prevent="handleRegister" class="space-y-4">
       <div>
-        <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Account Role</label>
+        <label class="block text-xs font-black text-slate-800 uppercase mb-1">Account Role</label>
         <div class="grid grid-cols-2 gap-2">
-          <button type="button" @click="form.role = 'b2c'" :class="[form.role === 'b2c' ? 'bg-brand-600 text-white font-bold' : 'bg-gray-100 dark:bg-gray-800 text-gray-400']" class="py-2.5 rounded-xl text-xs">
+          <button type="button" @click="form.role = 'b2c'" :class="[form.role === 'b2c' ? 'bg-brand-600 text-white font-black shadow-md' : 'bg-slate-200/80 text-slate-700 font-bold']" class="py-2.5 rounded-xl text-xs transition-all">
             B2C Customer
           </button>
-          <button type="button" @click="form.role = 'b2b'" :class="[form.role === 'b2b' ? 'bg-amber-500 text-gray-950 font-bold' : 'bg-gray-100 dark:bg-gray-800 text-gray-400']" class="py-2.5 rounded-xl text-xs">
+          <button type="button" @click="form.role = 'b2b'" :class="[form.role === 'b2b' ? 'bg-amber-500 text-slate-950 font-black shadow-md' : 'bg-slate-200/80 text-slate-700 font-bold']" class="py-2.5 rounded-xl text-xs transition-all">
             B2B Retailer
           </button>
         </div>
       </div>
 
       <div>
-        <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Full Name</label>
-        <input v-model="form.name" type="text" required class="w-full px-4 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm dark:text-white" />
+        <label class="block text-xs font-black text-slate-800 uppercase mb-1">Full Name</label>
+        <input v-model="form.name" type="text" required class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-slate-300 text-sm font-semibold text-slate-950 outline-none focus:border-brand-500" />
       </div>
 
       <div>
-        <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Email Address</label>
-        <input v-model="form.email" type="email" required class="w-full px-4 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm dark:text-white" />
+        <label class="block text-xs font-black text-slate-800 uppercase mb-1">Email Address</label>
+        <input v-model="form.email" type="email" required class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-slate-300 text-sm font-semibold text-slate-950 outline-none focus:border-brand-500" />
       </div>
 
       <div>
-        <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Password</label>
-        <input v-model="form.password" type="password" required class="w-full px-4 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm dark:text-white" />
+        <label class="block text-xs font-black text-slate-800 uppercase mb-1">Password</label>
+        <input v-model="form.password" type="password" required class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-slate-300 text-sm font-semibold text-slate-950 outline-none focus:border-brand-500" />
       </div>
 
       <template v-if="form.role === 'b2b'">
         <div>
-          <label class="block text-xs font-bold text-amber-400 uppercase mb-1">Company / Store Name</label>
-          <input v-model="form.company_name" type="text" required class="w-full px-4 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 border border-amber-500/40 text-sm dark:text-white" />
+          <label class="block text-xs font-black text-amber-600 uppercase mb-1">Company / Store Name</label>
+          <input v-model="form.company_name" type="text" required class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-amber-500/60 text-sm font-semibold text-slate-950 outline-none focus:border-amber-500" />
         </div>
         <div>
-          <label class="block text-xs font-bold text-amber-400 uppercase mb-1">Trade License Number</label>
-          <input v-model="form.trade_license" type="text" class="w-full px-4 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 border border-amber-500/40 text-sm dark:text-white" />
+          <label class="block text-xs font-black text-amber-600 uppercase mb-1">Trade License Number</label>
+          <input v-model="form.trade_license" type="text" class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-amber-500/60 text-sm font-semibold text-slate-950 outline-none focus:border-amber-500" />
         </div>
       </template>
 
