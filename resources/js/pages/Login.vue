@@ -15,9 +15,9 @@
           <input
             v-model="form.email"
             type="email"
-            placeholder="name@example.com"
+            placeholder="Enter your email (e.g. user@example.com)"
             required
-            class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-slate-300 text-sm font-semibold text-slate-950 placeholder:text-slate-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all"
+            class="w-full px-4 py-3 rounded-xl bg-transparent border border-slate-300 text-sm font-semibold text-slate-950 placeholder:text-slate-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all shadow-sm"
           />
         </div>
         <div>
@@ -25,9 +25,9 @@
           <input
             v-model="form.password"
             type="password"
-            placeholder="••••••••"
+            placeholder="Enter your account password"
             required
-            class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-slate-300 text-sm font-semibold text-slate-950 placeholder:text-slate-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all"
+            class="w-full px-4 py-3 rounded-xl bg-transparent border border-slate-300 text-sm font-semibold text-slate-950 placeholder:text-slate-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition-all shadow-sm"
           />
         </div>
 

@@ -20,27 +20,27 @@
 
       <div>
         <label class="block text-xs font-black text-slate-800 uppercase mb-1">Full Name</label>
-        <input v-model="form.name" type="text" required class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-slate-300 text-sm font-semibold text-slate-950 outline-none focus:border-brand-500" />
+        <input v-model="form.name" type="text" placeholder="e.g. Tanvir Ahmed" required class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-slate-300 text-sm font-semibold text-slate-950 placeholder:text-slate-500 outline-none focus:border-brand-500" />
       </div>
 
       <div>
         <label class="block text-xs font-black text-slate-800 uppercase mb-1">Email Address</label>
-        <input v-model="form.email" type="email" required class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-slate-300 text-sm font-semibold text-slate-950 outline-none focus:border-brand-500" />
+        <input v-model="form.email" type="email" placeholder="e.g. name@example.com" required class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-slate-300 text-sm font-semibold text-slate-950 placeholder:text-slate-500 outline-none focus:border-brand-500" />
       </div>
 
       <div>
         <label class="block text-xs font-black text-slate-800 uppercase mb-1">Password</label>
-        <input v-model="form.password" type="password" required class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-slate-300 text-sm font-semibold text-slate-950 outline-none focus:border-brand-500" />
+        <input v-model="form.password" type="password" placeholder="Create a secure password" required class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-slate-300 text-sm font-semibold text-slate-950 placeholder:text-slate-500 outline-none focus:border-brand-500" />
       </div>
 
       <template v-if="form.role === 'b2b'">
         <div>
           <label class="block text-xs font-black text-amber-600 uppercase mb-1">Company / Store Name</label>
-          <input v-model="form.company_name" type="text" required class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-amber-500/60 text-sm font-semibold text-slate-950 outline-none focus:border-amber-500" />
+          <input v-model="form.company_name" type="text" placeholder="e.g. TechMart Wholesale Ltd." required class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-amber-500/60 text-sm font-semibold text-slate-950 placeholder:text-slate-500 outline-none focus:border-amber-500" />
         </div>
         <div>
           <label class="block text-xs font-black text-amber-600 uppercase mb-1">Trade License Number</label>
-          <input v-model="form.trade_license" type="text" class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-amber-500/60 text-sm font-semibold text-slate-950 outline-none focus:border-amber-500" />
+          <input v-model="form.trade_license" type="text" placeholder="e.g. TRAD/DHAKA/2026/0912" class="w-full px-4 py-2.5 rounded-xl bg-transparent border border-amber-500/60 text-sm font-semibold text-slate-950 placeholder:text-slate-500 outline-none focus:border-amber-500" />
         </div>
       </template>
 
