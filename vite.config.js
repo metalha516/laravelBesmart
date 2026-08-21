@@ -20,7 +20,7 @@ export default defineConfig(
   isStandalone
     ? {
         // Standalone SPA build using index.html as entry
-        base: process.env.VITE_GITHUB_PAGES === 'true' ? '/Besmart/' : '/',
+        base: process.env.VITE_GITHUB_PAGES === 'true' ? '/laravelBesmart/' : '/',
         plugins: [vuePlugin],
         resolve: {
           alias: {
